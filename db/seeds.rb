@@ -10,9 +10,9 @@ require 'faker'
 City.destroy_all
 User.destroy_all
 Tag.destroy_all
-#PrivateMessage.destroy_all
+PrivateMessage.destroy_all
 Gossip.destroy_all
-#TagGossip.destroy_all
+TagGossip.destroy_all
 
 # Seed for City
 10.times do
@@ -55,5 +55,11 @@ end
   TagGossip.create!(
     tag_id: Tag.all.sample.id,
     gossip_id: Gossip.all.sample.id
+  )
+end
+
+20.times do
+  PrivateMessage.create!(
+    content: Faker::Movies::Lebowski.quote
   )
 end
